@@ -79,7 +79,7 @@ $(() => {
                         function (r) {
                             ctx.params.currentLanguage = r.currentLanguage;
                             ctx.params.nav = r.nav;
-                            ctx.params[section] = r[section] || true;
+                            ctx.params[section] = r[section] ? r[section] : section === "contact" ? true : false;
                         })
                     .then(function () {
                         return ctx.loadPartials(partials);
