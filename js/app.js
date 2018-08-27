@@ -113,15 +113,26 @@ $(() => {
             })
         });
 
+        this.get(ROUTES.projects, function () {
+            let data = this.params;
+            this.loadCommon('projects', {})
+            .then(function(){
+                // console.log(ctx);
+                this.partial(layout, data, {
+                    content: projects
+                })
+            })
+        });
+
 
         this.get("#/:lang", function () {
             if (this.params.lang !== sessionStorage.getItem('currentLanguage')) {
                 sessionStorage.setItem('currentLanguage', this.params.lang);
-                this.redirect(ROUTES[this.params.pageToTranslate]);
             } else {
-                console.log('The language is the same')
-                //this.redirect(ROUTES.about);
+                console.log('The language is the same');
+                // redirection is poitless
             }
+            this.redirect(ROUTES[this.params.pageToTranslate]);
         })
 
     
