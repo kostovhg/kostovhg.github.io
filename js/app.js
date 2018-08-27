@@ -1,38 +1,5 @@
 $(() => {
-    const [
-        layout,
-        nav, footer,
-        about, 
-        experience, experienceRecord,
-        education, edu, eduTab,
-        skills, skill,
-        projects, project,
-        login, register, contact
-    ] = [
-        './templates/layout.hbs',
-        './templates/common/nav.hbs', './templates/common/footer.hbs',
-        './templates/main/about.hbs', 
-        './templates/main/experience.hbs', './templates/partials/experienceRecord.hbs',
-        './templates/main/education.hbs', './templates/partials/edu.hbs', './templates/partials/eduTab.hbs',
-        './templates/main/skills.hbs', './templates/partials/skill.hbs',
-        './templates/main/projects.hbs', './templates/partials/project.hbs',
-        './templates/forms/login.hgs', './templates/forms/register.hbs', './templates/forms/contact.hbs'
-    ];
-
-    const ROUTES = {
-        index: 'index.html',
-        about: '#/about',
-        experience: "#/experience",
-        skills: "#/skills",
-        education: "#/education",
-        projects: "#/projects",
-        contact: "#/contact",
-    };
-
-    function getLang() {
-        return "language/" + (sessionStorage.getItem('currentLanguage') || "en") + ".json";
-    }
-
+    
     const app = Sammy('#layout', function () {
 
         let appCtx = this;
@@ -58,12 +25,9 @@ $(() => {
             }
         })
 
-        this.before({
-            except: {
-                path: "/index.html#/lang"
-            }
-        }, function () {
-            //console.log('a before');
+        this.before( /\#\/bg|en$/g, function () {
+            this.params.pageToTranslate = this.app.last_route.path.toString().slice(4, -2);
+            console.log(this.params.pageToTranslate);
         });
 
         this.helpers({
@@ -84,7 +48,7 @@ $(() => {
                     .then(function () {
                         return ctx.loadPartials(partials);
                     }).fail(function () {
-                        console.log('There is problem with loading data.')
+                        // console.log('There is problem with loading data.')
                         return false;
                     })
             }
@@ -108,7 +72,7 @@ $(() => {
             let ctx = this;
             this.loadCommon('experience', {experienceRecord})
             .then(function(){
-                console.log(ctx);
+                // console.log(ctx);
                 this.partial(layout, ctx.params, {
                     content: experience
                 })
@@ -119,7 +83,7 @@ $(() => {
             let ctx = this;
             this.loadCommon('skills', {skill})
             .then(function(){
-                console.log(ctx);
+                // console.log(ctx);
                 ctx.params.skills.map(s => s["bootstrap-color"] = ctx.getColor(s.level));
                 this.partial(layout, ctx.params, {
                     content: skills
@@ -131,7 +95,7 @@ $(() => {
             let ctx = this;
             this.loadCommon('education', {edu, eduTab})
             .then(function(){
-                console.log(ctx);
+                // console.log(ctx);
                 this.partial(layout, ctx.params, {
                     content: education
                 })
@@ -142,7 +106,7 @@ $(() => {
             let ctx = this;
             this.loadCommon('contact', {})
             .then(function(){
-                console.log(ctx);
+                // console.log(ctx);
                 this.partial(layout, ctx.params, {
                     content: contact
                 })
@@ -151,13 +115,12 @@ $(() => {
 
 
         this.get("#/:lang", function () {
-            console.log(this);
             if (this.params.lang !== sessionStorage.getItem('currentLanguage')) {
                 sessionStorage.setItem('currentLanguage', this.params.lang);
-                this.redirect(ROUTES.about);
+                this.redirect(ROUTES[this.params.pageToTranslate]);
             } else {
                 console.log('The language is the same')
-                this.redirect(ROUTES.about);
+                //this.redirect(ROUTES.about);
             }
         })
 
