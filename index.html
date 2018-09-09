@@ -10,6 +10,8 @@
     <!-- Boostrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 
@@ -25,6 +27,25 @@
     <!-- Font Awesome (heavy for page loading) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- Firebase initialization -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-app.js"></script>
+    <!-- Additional firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDHPVNhWSnIc-2NZNn-XHIwmwYSOiE9GM8",
+            authDomain: "pdb-aa8e8.firebaseapp.com",
+            databaseURL: "https://pdb-aa8e8.firebaseio.com",
+            projectId: "pdb-aa8e8",
+            storageBucket: "pdb-aa8e8.appspot.com",
+            messagingSenderId: "260563364863"
+        };
+        firebase.initializeApp(config);
+    </script>
+
     <!-- jQuery -->
     <script src="lib/jquery-3.3.1.min.js"></script>
 
@@ -39,6 +60,7 @@
 
     <!-- All application constants and functions -->
     <script src="js/constants.js"></script>
+
 </head>
 
 <body>
@@ -48,6 +70,7 @@
 </body>
 
 <!-- Site functionality -->
+<script src="js/helpers.js"></script>
 <script src="js/app.js"></script>
 
 </html>

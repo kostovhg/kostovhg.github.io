@@ -1,0 +1,46 @@
+[{
+        "id": "hhi",
+        "name": "Kostenets-HHI AD",
+        "address": "2 Saedinenie Str, 2030 Kostenets",
+        "website": "#",
+        "contacts": "does not have permission for this",
+        "logo": "images/hhi.jpg",
+        "business": "Paper production",
+        "bg": {
+            "name": "Костенец-ХХИ АД",
+            "address": "Костенец 2030, Съединение 2",
+            "contacts": "Нямам разрешение да ги оповестя",
+            "business": "Производство на хартия"
+        }
+    },
+    {
+        "id": "ecobulpack",
+        "name": "Ecobulpack EAD",
+        "address": "Sofia, 9-th patatoes belt",
+        "website": "#",
+        "contacts": "does not have permission for this",
+        "logo": "images/ecobul.gif",
+        "business": "Waste treatment",
+        "bg": {
+            "name": "Екобулпак ЕАД",
+            "address": "София, 9-ти картофен пояс",
+            "contacts": "does not have permission for this",
+            "business": "Обработка на битови отпадъци"
+        }
+    },
+    {
+        "id": "kpm",
+        "name": "Kostenets Paper Mill",
+        "address": "2 Saedinenie Str, 2030 Kostenets",
+        "website": "#",
+        "contacts": "does not have permission for this",
+        "logo": "images/kkpm.png",
+        "business": "Paper production",
+        "bg": {
+            "name": "Костенец Пейпър Мил ЕАД",
+            "address": "Костенец 2030, Съединение 2",
+            "contacts": "Няма контакти. Дружеството спря.",
+            "business": "Производство и търгивия със санитарно хигиенни продукти от целулоза"
+        }
+    }
+]

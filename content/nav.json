@@ -1,0 +1,17 @@
+{
+    "about": "about",
+    "experience": "experience",
+    "skills": "skills",
+    "education": "education",
+    "projects": "projects",
+    "contact": "contact",
+    "bg": {
+        "about": "за мен",
+        "experience": "опит",
+        "skills": "умения",
+        "education": "образование",
+        "projects": "проекти",
+        "contact": "контакт"
+    }
+
+}

@@ -39,17 +39,13 @@ $(() => {
                         partials[key] = addPartials[key];    
                     }
                 }
-                //let pArr = jsonRequester.getSectionData(ctx, [section]);
-                //pArr.then(function() {console.log(r);console.log('pArr finished');})
                 return $.getJSON(getLang(),
                         function (r) {
                             ctx.params.currentLanguage = r.currentLanguage;
                             ctx.params.nav = r.nav;
-                            console.log(ctx.params.section)
-                            ctx.params[section] = r[section] ? r[section] : /contact|login|register/.test(section);
+                            ctx.params[section] = r[section] ? r[section] : (section === "contact" ? true : false);
                         })
                     .then(function () {
-                        console.log('inside then after getJSON in loadCommon')
                         return ctx.loadPartials(partials);
                     }).fail(function () {
                         // console.log('There is problem with loading data.')
@@ -66,7 +62,6 @@ $(() => {
             let ctx = this;
             this.loadCommon('about')
                 .then(function () {
-                    console.log("Inside about in then clause on returned from LoadCommon ");
                     this.partial(layout, ctx.params, {
                         content: about
                     });
@@ -127,22 +122,6 @@ $(() => {
                     content: projects
                 })
             })
-        });
-
-        this.get(ROUTES.login, function(){
-            let data = this.params;
-            this.loadCommon('login', {})
-            .then(function() {
-                this.partial(layout, data, {content: login});
-            });
-        });
-
-        this.post(ROUTES.login, function(){
-           let data = {
-                user: this.params.email,
-                password: this.params.password
-            };
-            console.log(data)
         });
 
 

@@ -1,0 +1,40 @@
+[{
+		"institution": "SoftUni",
+		"logo": "",
+		"date-from": "2016-10-10",
+		"date-to": "2018-08-12",
+		"profile": "Java Web Developer",
+		"notes": "Notes will be added later",
+		"bg": {
+			"institution": "SoftUni",
+			"profile": "Java Web Developer",
+			"notes": "Notes will be added later"
+		}
+	},
+	{
+		"institution": "Technical University",
+		"logo": "",
+		"date-from": "2000-05-20",
+		"date-to": "2006-09-10",
+		"profile": "Machine construction technology",
+		"notes": "Notes will be added later",
+		"bg": {
+			"institution": "ТУ-София - Филиал Пловдив",
+			"profile": "Машиностроителна техника и технологии",
+			"notes": "Notes will be added later"
+		}
+	},
+	{
+		"institution": "Electric and electronics School - Plovdiv",
+		"logo": "",
+		"date-from": "1995-09-15",
+		"date-to": "2000-04-10",
+		"profile": "Industrial electronics",
+		"notes": "Notes will be added later",
+		"bg": {
+			"institution": "Техникум по електроника и електротехника - Пловдив",
+			"profile": "Промишлена електроника",
+			"notes": "Notes will be added later"
+		}
+	}
+]

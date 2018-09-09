@@ -15,11 +15,13 @@ const [
     './templates/main/education.hbs', './templates/partials/edu.hbs', './templates/partials/eduTab.hbs',
     './templates/main/skills.hbs', './templates/partials/skill.hbs',
     './templates/main/projects.hbs', './templates/partials/project.hbs',
-    './templates/forms/login.hgs', './templates/forms/register.hbs', './templates/forms/contact.hbs'
+    './templates/forms/login.hbs', './templates/forms/register.hbs', './templates/forms/contact.hbs'
 ];
 
 const ROUTES = {
     index: 'index.html',
+    login: '#/login',
+    register: '#/register',
     about: '#/about',
     experience: "#/experience",
     skills: "#/skills",
@@ -31,3 +33,17 @@ const ROUTES = {
 function getLang() {
     return "content/" + (sessionStorage.getItem('currentLanguage') || "en") + ".json";
 }
+
+const db = firebase.database();
+// const dbContent = db.child('content');
+// const dbCompanies = db.child('content/companies');
+// const dbExperience = db.child('content/experience');
+
+// dbCompanies.on('value', snap => {
+//     // render data to HTML
+// });
+
+// dbExperience.on('child_added', snap => {
+//     // append experience to list
+// });
+

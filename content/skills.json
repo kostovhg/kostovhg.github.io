@@ -1,0 +1,28 @@
+[
+    {
+        "skillName": "HTML",
+        "level": "15"
+    },
+    {
+        "skillName": "CSS",
+        "level": "10"
+    },
+    {
+        "skillName": "JavaScript",
+        "level": "25"
+    },
+    {
+        "skillName": "Coffee",
+        "level": "75",
+        "bg": {
+            "skillName": "Кафе"
+        }
+    },
+    {
+        "skillName": "Smoking",
+        "level": "100",
+        "bg": {
+            "skillName": "Пушене"
+        }
+    }
+]
