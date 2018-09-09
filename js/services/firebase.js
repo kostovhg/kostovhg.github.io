@@ -5,7 +5,8 @@ var config = {
     databaseURL: "https://pdb-aa8e8.firebaseio.com",
     projectId: "pdb-aa8e8",
     storageBucket: "pdb-aa8e8.appspot.com",
-    messagingSenderId: "260563364863"
+    messagingSenderId: "260563364863",
+    appName: "spa_app"
 };
 
 firebase.initializeApp(config);
