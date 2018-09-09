@@ -138,12 +138,25 @@ $(() => {
         });
 
         this.post(ROUTES.login, function(){
+            toggleSignIn(this.params);
+        })
+
+        this.get(ROUTES.register, function(){
+            let data = this.params;
+            this.loadCommon('register', {})
+            .then(function(){
+                this.partial(layout, data, {content: register});
+            });
+        });
+
+        this.post(ROUTES.register, function(){
            let data = {
-                user: this.params.email,
+                email: this.params.email,
                 password: this.params.password
             };
-            console.log(data)
+            handleSignin(data);
         });
+
 
 
         this.get("#/:lang", function () {

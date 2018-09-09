@@ -34,16 +34,4 @@ function getLang() {
     return "content/" + (sessionStorage.getItem('currentLanguage') || "en") + ".json";
 }
 
-const db = firebase.database();
-// const dbContent = db.child('content');
-// const dbCompanies = db.child('content/companies');
-// const dbExperience = db.child('content/experience');
-
-// dbCompanies.on('value', snap => {
-//     // render data to HTML
-// });
-
-// dbExperience.on('child_added', snap => {
-//     // append experience to list
-// });
 
