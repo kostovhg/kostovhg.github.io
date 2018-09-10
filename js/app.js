@@ -154,7 +154,7 @@ $(() => {
                 email: this.params.email,
                 password: this.params.password
             };
-            handleSignin(data);
+            handleSignUp(data);
         });
 
 
