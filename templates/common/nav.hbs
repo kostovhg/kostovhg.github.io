@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
-    <a class="navbar-brand" href="#/login">kostovhg-testing</a>
+    <a class="navbar-brand" href="{{#if userEmail}}#/logout{{else}}#/login{{/if}}">{{#if userEmail}}{{userEmail}}{{else}}kostovhg{{/if}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

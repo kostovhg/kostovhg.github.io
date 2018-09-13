@@ -11,6 +11,34 @@ var config = {
 
 firebase.initializeApp(config);
 
+firebase.auth().onAuthStateChanged(function (user) {
+    console.log(user)
+    if (user) {
+        for (const key in user) {
+            if (user.hasOwnProperty(key) && /^[a-zA-Z]{3,}$/.test(key)) {
+                if (typeof user[key] !== 'object' || user[key === null]) {
+                    if (key === 'displayName' && user.displayName === null) {
+                        sessionStorage.setIte('displayName', user.email.split('@')[0]);
+                    } else {
+                        sessionStorage.setItem('user' + (key.charAt(0).toUpperCase() + key.slice(1)), user[key]);
+                    }
+                } else {
+                    let propObj = user[key];
+                    for (const subKey in propObj) {
+                        if (propObj.hasOwnProperty(subKey)) {
+                            sessionStorage.setItem('user_' + (key.charAt(0).toUpperCase() + key.slice(1)) + '_' + subKey, propObj[subKey])
+
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        sessionStorage.clear();
+        console.log('User has logout');
+    }
+})
+
 // /**
 //  * initApp handles setting up UI event listeners and registering Firebase auth listeners:
 //  *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or

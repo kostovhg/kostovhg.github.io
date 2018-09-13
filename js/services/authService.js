@@ -9,12 +9,12 @@ function toggleSignIn(data) {
     } else {
         var email = data.email;
         var password = data.password;
-        if (email.length < 4) {
+        if (EMAIL_REGEX.test()) {
             alert('Please enter an email address.');
             return;
         }
-        if (password.length < 4) {
-            alert('Please enter a password.');
+        if (password.length < 5) {
+            alert('Please enter a password longer than 5 characters.');
             return;
         }
         // Sign in with email and pass.
@@ -30,12 +30,12 @@ function toggleSignIn(data) {
                 alert(errorMessage);
             }
             console.log(error);
-            document.getElementById('quickstart-sign-in').disabled = false;
+            // document.getElementById('quickstart-sign-in').disabled = false;
             // [END_EXCLUDE]
         });
         // [END authwithemail]
     }
-    document.getElementById('quickstart-sign-in').disabled = true;
+    // document.getElementById('quickstart-sign-in').disabled = true;
 }
 /**
  * Handles the sign up button press.
@@ -43,12 +43,12 @@ function toggleSignIn(data) {
 function handleSignUp(data) {
     var email = data.email;
     var password = data.password;
-    if (email.length < 4) {
+    if (!EMAIL_REGEX.test()) {
         alert('Please enter an email address.');
         return;
     }
-    if (password.length < 4) {
-        alert('Please enter a password.');
+    if (password.length < 5) {
+        alert('Please enter a password longer than 5 characters.');
         return;
     }
     // Sign in with email and pass.
@@ -82,8 +82,8 @@ function sendEmailVerification() {
     // [END sendemailverification]
 }
 
-function sendPasswordReset() {
-    var email = document.getElementById('email').value;
+function sendPasswordReset(data) {
+    var email = data.email;
     // [START sendpasswordemail]
     firebase.auth().sendPasswordResetEmail(email).then(function () {
         // Password Reset Email Sent!

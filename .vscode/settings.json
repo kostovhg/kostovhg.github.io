@@ -1,3 +1,7 @@
 {
-    "mocha.enabled": true
+    "mocha.enabled": true,
+    "jshint.options": {
+        "esversion": 6
+    },
+    "eslint.enable": false
 }

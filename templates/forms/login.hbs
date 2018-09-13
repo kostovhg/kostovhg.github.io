@@ -1,23 +1,26 @@
 <!-- Login section -->
-<div class="w-50 d-block mx-auto">
-    <form action="#/login" method="post">
-        <div class="form-group row">
-            <label for="email" class="col-4 col-form-label">Email</label>
-            <div class="col-8">
-                <input type="text" id="email" name="email" class="form-control">
+<div class="w-75 d-block mx-auto">
+    <h1 class="text-uppercase mb-0">Sing in</h1>
+    <div class="container rounded shadow p-4">
+        <form action="#/login" method="post">
+            <div class="form-group row">
+                <label for="email" class="col-4 col-form-label">Email</label>
+                <div class="col-8">
+                    <input type="text" id="email" name="email" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="password" class="col-4 col-form-label">Password</label>
-            <div class="col-8">
-                <input type="password" id="password" name="password" class="form-control">
+            <div class="form-group row">
+                <label for="password" class="col-4 col-form-label">Password</label>
+                <div class="col-8">
+                    <input type="password" id="password" name="password" class="form-control border-bottom">
+                </div>
             </div>
-        </div>
-        <hr>
-        <button type="submit" class="btn btn-primary">Sign in</button>
-        <hr>
-        <p>If you don't have registration, you can use our <a href="#/register">register</a> form.</p> 
-        <p>In case you have forgotten your password you can <a href="#/reset">receive password reset email</a></p>
+            <hr>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <hr>
+            <p>If you are not registered you can <a href="#/register">sign up</a>.</p>
+            <p>In case you have forgotten your password you can <a href="#/reset">receive password reset email</a></p>
 
-    </form>
+        </form>
+    </div>
 </div>

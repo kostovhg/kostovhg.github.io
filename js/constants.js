@@ -6,7 +6,8 @@ const [
     education, edu, eduTab,
     skills, skill,
     projects, project,
-    login, register, contact
+    login, register, contact,
+    profile
 ] = [
     './templates/layout.hbs',
     './templates/common/nav.hbs', './templates/common/footer.hbs',
@@ -15,12 +16,14 @@ const [
     './templates/main/education.hbs', './templates/partials/edu.hbs', './templates/partials/eduTab.hbs',
     './templates/main/skills.hbs', './templates/partials/skill.hbs',
     './templates/main/projects.hbs', './templates/partials/project.hbs',
-    './templates/forms/login.hbs', './templates/forms/register.hbs', './templates/forms/contact.hbs'
+    './templates/forms/login.hbs', './templates/forms/register.hbs', './templates/forms/contact.hbs',
+    './templates/main/profile.hbs'
 ];
 
 const ROUTES = {
     index: 'index.html',
     login: '#/login',
+    logout: '#/logout',
     register: '#/register',
     about: '#/about',
     experience: "#/experience",
@@ -28,7 +31,10 @@ const ROUTES = {
     education: "#/education",
     projects: "#/projects",
     contact: "#/contact",
+    profile: "#/profile"
 };
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function getLang() {
     return "content/" + (sessionStorage.getItem('currentLanguage') || "en") + ".json";

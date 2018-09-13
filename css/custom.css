@@ -42,3 +42,15 @@ body div.container {
     height: 20%;
     object-fit: contain;
 }
+
+input.form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+}
+
+input.form-control:focus {
+    box-shadow: 2px 2px 5px lightblue;
+    border-radius: 5px; 
+}
